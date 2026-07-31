@@ -5,6 +5,8 @@ import com.healthsphere.backend.dto.PatientResponse;
 import com.healthsphere.backend.service.PatientService;
 import jakarta.validation.Valid;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +32,15 @@ public class PatientController {
     @PreAuthorize("hasAnyRole('ADMIN','DOCTOR','RECEPTIONIST')")
     @GetMapping
     public List<PatientResponse> getAllPatients() {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        System.out.println("========== PATIENT DEBUG ==========");
+        System.out.println("USERNAME    : " + authentication.getName());
+        System.out.println("AUTHORITIES : " + authentication.getAuthorities());
+        System.out.println("AUTH OBJECT : " + authentication);
+        System.out.println("===================================");
+
         return patientService.getAllPatients();
     }
 
