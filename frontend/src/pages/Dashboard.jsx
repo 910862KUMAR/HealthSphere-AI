@@ -55,13 +55,13 @@ const Dashboard = () => {
     {
       title: "Patients",
       value: summary.totalPatients,
-      icon: "👨‍⚕️",
+      icon: "👤",
     },
 
     {
       title: "Doctors",
       value: summary.totalDoctors,
-      icon: "🩺",
+      icon: "👨‍⚕️",
     },
 
     {
