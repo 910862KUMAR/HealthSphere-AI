@@ -457,7 +457,7 @@ LinkedIn:
 (Add your LinkedIn URL)
 
 GitHub:
-(Add your GitHub URL)
+(https://github.com/910862KUMAR/HealthSphere-AI)
 
 ---
 
