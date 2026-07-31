@@ -29,9 +29,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         // ================= DEBUG LOGS =================
         System.out.println("======================================");
-        System.out.println("LOGIN EMAIL      : " + user.getEmail());
-        System.out.println("DATABASE ROLE    : " + user.getRole());
-        System.out.println("AUTHORITIES      : ROLE_" + user.getRole().name());
+        System.out.println("ID            : " + user.getId());
+        System.out.println("EMAIL         : " + user.getEmail());
+        System.out.println("USERNAME      : " + user.getUsername());
+        System.out.println("ROLE          : " + user.getRole());
+        System.out.println("AUTHORITIES   : ROLE_" + user.getRole().name());
         System.out.println("======================================");
         // ==============================================
 
