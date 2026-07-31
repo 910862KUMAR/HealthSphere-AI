@@ -6,6 +6,8 @@ import com.healthsphere.backend.entity.User;
 import com.healthsphere.backend.repository.UserRepository;
 import com.healthsphere.backend.security.JwtService;
 import com.healthsphere.backend.service.RefreshTokenService;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,6 +15,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthenticationService {
+
+    @Value("${spring.datasource.url}")
+    private String datasourceUrl;
+
+    @PostConstruct
+    public void printDatasource() {
+        System.out.println("======================================");
+        System.out.println("DATASOURCE URL : " + datasourceUrl);
+        System.out.println("======================================");
+    }
 
     private final UserRepository repository;
     private final PasswordEncoder encoder;
